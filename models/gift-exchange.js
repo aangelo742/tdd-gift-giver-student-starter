@@ -1,7 +1,8 @@
+const { BadRequestError } = require("../utils/errors")
 class GiftExchange {
     static pairs(names) {
         if(names.length % 2 != 0) {
-            throw new Error("The number of names can not be odd!")
+            throw new BadRequestError("Array must have an even number of inputs!")
         } else if(names.length % 2 == 0) {
             let tempArray = [...names]
             console.log("tempArray before shuffle: ", tempArray)
